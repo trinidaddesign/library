@@ -1,10 +1,11 @@
 //where info wil be displayed
 const text = document.querySelector('.text');
-//where the questions will be displayed
-const popUp = document.querySelector('.popUp');
+
+//dom elements for dialog modal
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
-const closeButton = document.querySelector("dialog button")
+const closeButton = document.querySelector("dialog button");
+
 //array for book storage
 const myLibrary = [];
 

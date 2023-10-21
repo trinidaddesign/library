@@ -8,15 +8,6 @@
     border: 1px solid orange;
     height: 100dvh;
     width: 100dvw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.popUp {
-    border: 1px solid blue;
-    height: 200px;
-    width: 200px;
 }
 
 .text {
