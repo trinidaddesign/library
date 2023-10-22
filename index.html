@@ -8,6 +8,23 @@
 </head>
 <body>
     <div class="container">
+        <div class="header">My Library</div>
+        <div class="text">
+            <table>
+                <tr>
+                    <th scope="col">Author</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Page Count</th>
+                    <th scope="col">Read</th>
+                </tr>
+                <tr>
+                    <td scope="row">Scott Synder</td>
+                    <td>Batman and the Justice Leauge fight bob</td>
+                    <td>200</td>
+                    <td>yes</td>
+                </tr>
+            </table>
+        </div>
         <div class="dialog">
             <dialog>
                 <form>
@@ -23,12 +40,10 @@
                     <label for="no">No</label>
                     <input type="radio" id="no" name="read" value="no">
                 </form>
-                <button autofocus>Close</button>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button class="confirm" value="default">Confirm</button>
             </dialog>
             <button>Add New Book</button>
-        </div>
-        <div class="text">
-
         </div>
     </div>
     <script src="books.js"></script>

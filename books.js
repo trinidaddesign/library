@@ -1,5 +1,7 @@
 //where info wil be displayed
 const text = document.querySelector('.text');
+const confirmBtn = document.querySelector('.confirm');
+
 
 //dom elements for dialog modal
 const dialog = document.querySelector("dialog");
@@ -22,17 +24,12 @@ function addBook() {
 
   //adds new book
   //let newBook = new Books(title, author, pages)
+  //myLibrary.push(newBook)
 }
 
-let newBook = new Books("batman", "scott synder", 100,)
-let newBook2 = new Books("swamp Thing", " Alan Moore", 100)
-
-myLibrary.push(newBook)
-myLibrary.push(newBook2)
-
-myLibrary.forEach((book)=> {
-  text.textContent = `${book.title} written by: ${book.author}`
-})
+//myLibrary.forEach((book)=> {
+ // text.textContent = `${book.title} written by: ${book.author}`
+//})
 
 //show the dialog button button opens the dialog
 showButton.addEventListener("click", () => {
@@ -42,4 +39,9 @@ showButton.addEventListener("click", () => {
 //close button closes the dialog
 closeButton.addEventListener("click", () => {
   dialog.close()
+})
+
+//prevents the confirm button from submitting the form
+confirmBtn.addEventListener("click", () => {
+  e.preventDefault()
 })
