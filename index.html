@@ -21,8 +21,11 @@
                     <td scope="row">Scott Synder</td>
                     <td>Batman and the Justice Leauge fight bob</td>
                     <td>200</td>
-                    <td>yes</td>
+                    <td>
+                        <label><input type="checkbox"></label>
+                    </td>
                 </tr>
+                <tbody class="tbody"></tbody>
             </table>
         </div>
         <div class="dialog">
@@ -34,11 +37,6 @@
                     <input type="text" id="author" name="author" placeholder="Authors Name">
                     <label for="pageCount">Pages</label>
                     <input type="number" id="pageCount" name="pageCount" placeholder="Page Count">
-                    <legend>Read</legend>
-                    <label for="yes">Yes</label>
-                    <input class="read" type="radio" id="yes" name="read" value="yes">
-                    <label for="no">No</label>
-                    <input class="read" type="radio" id="no" name="read" value="no">
                 </form>
                 <button class="cancel" value="cancel" formmethod="dialog">Cancel</button>
                 <button class="confirm" value="default">Confirm</button>
