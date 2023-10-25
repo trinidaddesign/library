@@ -37,8 +37,12 @@ function addBook() {
 }
 
 function displayBook() {
-  //tableBody.innerHtml = "";
+  tableBody.innerHtml = "";
   myLibrary.forEach((book) => {
+    //this is just temporary fix. all books would be displayed with each addition.
+    //couldnt find the bug but by removing what was added to the array previously
+     //it keeps the array at just one obj at a time
+    myLibrary.shift();
     const bookHtml = 
     `<tr>
       <td>${book.title}</td>
