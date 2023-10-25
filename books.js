@@ -42,7 +42,8 @@ function displayBook() {
     //this is just temporary fix. all books would be displayed with each addition.
     //couldnt find the bug but by removing what was added to the array previously
      //it keeps the array at just one obj at a time
-    myLibrary.shift();
+    //myLibrary.shift();
+    const lastBook = myLibrary[myLibrary.length - 1]
     const bookHtml = 
     `<tr>
       <td>${book.title}</td>
@@ -52,7 +53,9 @@ function displayBook() {
       <label><input type="checkbox"></label>
       </td>
     </tr>`;
-    tableBody.insertAdjacentHTML("afterbegin",bookHtml)
+    if (book === lastBook) {
+      tableBody.insertAdjacentHTML("afterbegin",bookHtml)
+    }
   })
 }
 
