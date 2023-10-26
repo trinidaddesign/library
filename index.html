@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Document</title>
 </head>
 <body>
     <div class="container">
     
-        <div class="header">My Library</div>
+        <div class="header">
+            <button class="lamp"><span class="material-symbols-outlined">floor_lamp</span></button>
+            My Library
+            <button class="addBook">Add Book</button>
+        </div>
         <div class="text">
             <table>
                 <tr>
@@ -17,6 +22,7 @@
                     <th scope="col">Author</th>
                     <th scope="col">Page Count</th>
                     <th scope="col">Read</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 <tr>
                     <td scope="row">Batman: Zero Year</td>
@@ -25,6 +31,7 @@
                     <td>
                         <label><input type="checkbox"></label>
                     </td>
+                    <td><button class="removeBook">Delete</button></td>
                 </tr>
                 <tbody class="tbody"></tbody>
             </table>
@@ -39,11 +46,9 @@
                     <label for="pageCount">Pages</label>
                     <input type="number" id="pageCount" name="pageCount" placeholder="Page Count">
                 </form>
-								<button class="confirm" value="default">Confirm</button>
+				<button class="confirm" value="default">Confirm</button>
                 <button class="cancel" value="cancel" formmethod="dialog">Cancel</button>
-                
             </dialog>
-            <button class="addBook">Add Book</button>
         </div>
     </div>
     <script src="books.js"></script>

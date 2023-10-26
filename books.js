@@ -12,6 +12,7 @@ const form = document.querySelector('.form');
 const titleVal = document.querySelector('#title');
 const authorVal = document.querySelector('#author');
 const pageCount = document.querySelector('#pageCount');
+//const removeBook = document.querySelector('.removeBook');
 
 //dom element for displaying books
 const tableBody = document.querySelector('.tbody');
@@ -39,22 +40,19 @@ function addBook() {
 function displayBook() {
   tableBody.innerHtml = "";
   myLibrary.forEach((book) => {
-    //this is just temporary fix. all books would be displayed with each addition.
-    //couldnt find the bug but by removing what was added to the array previously
-     //it keeps the array at just one obj at a time
-    //myLibrary.shift();
     const lastBook = myLibrary[myLibrary.length - 1]
     const bookHtml = 
     `<tr>
-      <td>${book.title}</td>
+      <td data-index-number="${myLibrary.indexOf(book)}" >${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td>
       <td>
       <label><input type="checkbox"></label>
       </td>
+      <td><button onClick="removeBook()">Delete</button></td>
     </tr>`;
     if (book === lastBook) {
-      tableBody.insertAdjacentHTML("afterbegin",bookHtml)
+      tableBody.insertAdjacentHTML("beforebegin",bookHtml)
     }
   })
 }
@@ -65,7 +63,9 @@ function clearForm() {
   pageCount.value = "";
 }
 
-
+function removeBook() {
+  return alert('pushed')
+}
 
 //show the dialog button button opens the dialog
 showBtn.addEventListener("click", () => {
@@ -76,6 +76,8 @@ showBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   dialog.close()
 })
+
+
 
 //prevents the confirm button from submitting the form
 confirmBtn.addEventListener("click", () => {
