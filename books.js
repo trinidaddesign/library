@@ -13,6 +13,7 @@ const titleVal = document.querySelector('#title');
 const authorVal = document.querySelector('#author');
 const pageCount = document.querySelector('#pageCount');
 //const removeBook = document.querySelector('.removeBook');
+const tableRow = document.querySelector('tr')
 
 //dom element for displaying books
 const tableBody = document.querySelector('.tbody');
@@ -42,14 +43,17 @@ function displayBook() {
   myLibrary.forEach((book) => {
     const lastBook = myLibrary[myLibrary.length - 1]
     const bookHtml = 
-    `<tr>
+    `<tr data-id="${myLibrary.indexOf(book)}">
       <td data-index-number="${myLibrary.indexOf(book)}" >${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td>
       <td>
-      <label><input type="checkbox"></label>
+        <select name="read" id="read">
+        <option value="yes">yes</option>
+        <option value="no">no</option>
+        </select> 
       </td>
-      <td><button onClick="removeBook()">Delete</button></td>
+      <td><button class="removeBook" onClick="removeBook(this)">Delete</button></td>
     </tr>`;
     if (book === lastBook) {
       tableBody.insertAdjacentHTML("beforebegin",bookHtml)
@@ -63,8 +67,10 @@ function clearForm() {
   pageCount.value = "";
 }
 
-function removeBook() {
-  return alert('pushed')
+function removeBook(element) {
+  const i = element.parentNode.parentNode;
+  i.parentNode.removeChild(i)
+
 }
 
 //show the dialog button button opens the dialog
